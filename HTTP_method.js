@@ -1,0 +1,21 @@
+import http from 'http';
+import fs from 'fs';
+const server=http.createServer((req, res) => {
+    if (req.method==="GET"&& req.url==="/"){
+        res.end("Home Page");
+    }
+    else if (req.method==="POST" && req.url==="/Post"){
+        res.end("Object Added")}
+        else if (req.method==="PUT"  && req.url==="/Put"){
+            res.end("Object Updated")
+        }
+        else if (req.method==="DELETE" && req.url==="/Delete"){
+            res.end("Object Deleted")
+        }
+        else if (req.method==="PATCH" && req.url==="/Patch"){
+            res.end("Object Patched")
+        }
+})
+server.listen(3000,()=>{
+    console.log("Server is Running....");
+})
